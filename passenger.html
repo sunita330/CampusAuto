@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Passenger — CampusAuto</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #map { height: 66vh; min-height:360px; width:100%; }
+    .status-box { margin-top:10px; }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">CampusAuto — Passenger</div>
+    <div class="nav-right">
+      <a href="index.html" class="btn small">Home</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <div class="panel">
+        <h3>Request Ride</h3>
+        <p>Select pickup & destination (demo uses fixed campus map). Then press Request Auto.</p>
+
+        <label>Pickup</label>
+        <input id="pickupInput" class="panel-input" style="width:100%;padding:8px;border-radius:8px;border:1px solid #e5e7eb;margin:6px 0" value="Main Gate (auto location)" />
+
+        <label>Drop</label>
+        <input id="dropInput" class="panel-input" style="width:100%;padding:8px;border-radius:8px;border:1px solid #e5e7eb;margin:6px 0" value="Hostel Block" />
+
+        <div style="display:flex;gap:10px;margin-top:10px;">
+          <button id="requestBtn" class="btn">Request Auto</button>
+          <button id="cancelBtn" class="btn outline">Cancel</button>
+        </div>
+
+        <div class="status-box panel" id="statusBox">
+          <strong>Status:</strong>
+          <div id="statusText">No active request</div>
+        </div>
+
+        <div class="panel" style="margin-top:12px;">
+          <strong>Nearby Autos</strong>
+          <ul id="autosList" style="margin-top:8px;list-style:none;padding-left:0"></ul>
+        </div>
+      </div>
+
+      <div class="map-card">
+        <div id="map"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">© 2025 CampusAuto</footer>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="passenger.js"></script>
+</body>
+</html>

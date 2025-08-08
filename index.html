@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CampusAuto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">CampusAuto</div>
+    <div class="nav-right">
+      <button id="loginBtn" class="btn small">Login</button>
+    </div>
+  </header>
+
+  <main class="hero full-height">
+    <div class="hero-inner">
+      <h1>Welcome to CampusAuto</h1>
+      <p class="lead">Automate and simplify your campus transport — quick rides between campus spots.</p>
+      <div class="cta-row">
+        <a id="getStarted" class="btn large">Get Started</a>
+      </div>
+      <div class="role-links">
+        <a href="passenger.html" class="btn outline">Open Passenger Dashboard</a>
+        <a href="driver.html" class="btn outline">Open Driver Dashboard</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    © 2025 CampusAuto. All rights reserved.
+  </footer>
+
+  <script>
+    // Ensure Get Started works — show popup with role options
+    document.addEventListener('DOMContentLoaded', () => {
+      const getStarted = document.getElementById('getStarted');
+      getStarted.addEventListener('click', () => {
+        const choose = confirm("Open Passenger dashboard? (Cancel to open Driver dashboard)");
+        if (choose) window.location.href = 'passenger.html';
+        else window.location.href = 'driver.html';
+      });
+    });
+  </script>
+</body>
+</html>
