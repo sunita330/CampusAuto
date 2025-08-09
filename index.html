@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -8,7 +8,10 @@
 </head>
 <body>
   <header class="nav">
-    <div class="brand">CampusAuto</div>
+    <div class="brand">
+      <span class="brand-icon">🚕</span>
+      <span class="brand-text">CampusAuto</span>
+    </div>
     <div class="nav-right">
       <button id="loginBtn" class="btn small">Login</button>
     </div>
@@ -16,16 +19,31 @@
 
   <main class="hero full-height">
     <div class="hero-inner">
-      <h1>Welcome to CampusAuto</h1>
+      <h1 class="hero-title">Welcome to CampusAuto</h1>
       <p class="lead">Automate and simplify your campus transport — quick rides between campus spots.</p>
+
       <div class="cta-row">
-        <a id="getStarted" class="btn large">Get Started</a>
+        <a id="getStarted" class="btn large pulse">Get Started</a>
       </div>
+
       <div class="role-links">
-        <a href="passenger.html" class="btn outline">Open Passenger Dashboard</a>
-        <a href="driver.html" class="btn outline">Open Driver Dashboard</a>
+        <a href="passenger.html" class="btn outline slide-in delay-1">Passenger Dashboard</a>
+        <a href="driver.html" class="btn outline slide-in delay-2">Driver Dashboard</a>
       </div>
     </div>
+
+    <!-- Floating car SVG (pure inline SVG so no external asset needed) -->
+    <svg class="floating-car" viewBox="0 0 200 80" aria-hidden="true">
+      <g transform="translate(0,0)">
+        <rect x="6" y="24" width="150" height="36" rx="8" fill="#fff" opacity="0.08"></rect>
+        <path d="M10 40 q10 -18 30 -18 h60 q8 0 18 6 l8 8 v6 h-130 z" fill="#fff" opacity="0.08"></path>
+        <g transform="translate(20,12) scale(0.9)">
+          <path d="M4 30 h40 l8 -12 h24 l8 12 h18 v6 h-98 v-6z" fill="#fff"/>
+          <circle cx="18" cy="36" r="6" fill="#111827"/>
+          <circle cx="58" cy="36" r="6" fill="#111827"/>
+        </g>
+      </g>
+    </svg>
   </main>
 
   <footer class="footer">
@@ -33,7 +51,7 @@
   </footer>
 
   <script>
-    // Ensure Get Started works — show popup with role options
+    // optional tiny behavior for getStarted -> choose role
     document.addEventListener('DOMContentLoaded', () => {
       const getStarted = document.getElementById('getStarted');
       getStarted.addEventListener('click', () => {
